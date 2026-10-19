@@ -1,29 +1,49 @@
-class Node {
-    int data;
-    Node next;
+class SinglyLinkedList{
+    private Node head;
+    private int size;
 
-    Node(int data) {
-        this.data = data;
-        this.next = null;
-    }
+
+    private class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
 }
+
+    public void insertAtFirst(int data){
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+        size++;
+    }
+
+    public void display(){
+        Node current = head;
+        while (current != null){
+            System.out.print(current.data + "->");
+            current = current.next;
+        }  
+        System.out.println();
+    }
+    public void getSize(){
+        System.out.println(size);
+    }
+
+    
+}
+
 
 public class Main {
     public static void main(String[] args) {
-        Node node1 = new Node(10);
-        Node head = node1;
-        Node node2 = new Node(20);
-        Node node3 = new Node(30);
-        node1.next = node2;
-        node2.next = node3;
-        System.out.println(head.data);
-        System.out.println(head.next.data);
-        System.out.println(head.next.next.data);
-
-        Node current = head;
-        while (current != null){
-            System.out.println(current.data);
-            current = current.next;
-        }   
+        SinglyLinkedList l1 = new SinglyLinkedList();
+        l1.insertAtFirst(12);
+        l1.display();
+        l1.getSize();    
+        l1.insertAtFirst(10);
+        l1.display();
+        l1.getSize(); 
     }
 }
