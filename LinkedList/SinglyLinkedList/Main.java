@@ -20,6 +20,8 @@ class SinglyLinkedList{
         size++;
     }
 
+    
+
     public void display(){
         Node current = head;
         while (current != null){
@@ -28,6 +30,7 @@ class SinglyLinkedList{
         }  
         System.out.println();
     }
+    
     public void getSize(){
         System.out.println(size);
     }
